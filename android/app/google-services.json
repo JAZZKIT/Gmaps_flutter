@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "899343384687",
+    "project_id": "notificationpushpractice",
+    "storage_bucket": "notificationpushpractice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899343384687:android:22070db026893c88f8cd9a",
+        "android_client_info": {
+          "package_name": "com.example.gmaps_practice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "899343384687-r1glpci3p9b7qq30j8e6tv9pls1d04pt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz4YddFGXNkBtheby9eHWPkbHar1JNZUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "899343384687-r1glpci3p9b7qq30j8e6tv9pls1d04pt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

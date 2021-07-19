@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:gmaps_practice/model/directions_model.dart';
 import '.env.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -10,7 +11,7 @@ class DirectionsRepository {
 
   DirectionsRepository({Dio? dio}) : _dio = dio ?? Dio();
 
-  Future<Directions> getDirections({
+  Future<Directions?> getDirections({
     required LatLng origin,
     required LatLng destination,
   }) async {
@@ -22,6 +23,7 @@ class DirectionsRepository {
         'key': googleAPIKey,
       },
     );
+    print(response);
 
     // Check if response is successful
     if (response.statusCode == 200) {
