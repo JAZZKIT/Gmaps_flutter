@@ -103,7 +103,7 @@ class _MapScreenState extends State<MapScreen> {
             // },
             onLongPress: _addMarker,
           ),
-          MessagingWidget(),
+          //MessagingWidget(),
           // if (_info != null)
           //   Positioned(
           //     top: 20.0,
