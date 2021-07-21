@@ -1,6 +1,9 @@
 // import 'package:firebase_core/firebase_core.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:gmaps_practice/DAO/developerDAO.dart';
+import 'package:gmaps_practice/database/database.dart';
+import 'package:gmaps_practice/screens/home_screen.dart';
 // import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:gmaps_practice/screens/map_screen.dart';
 
@@ -19,7 +22,11 @@ import 'package:gmaps_practice/screens/map_screen.dart';
 // FlutterLocalNotificationsPlugin? flutterLocalNotificationsPlugin;
 
 Future<void> main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final database =
+      await $FloorAppDataBase.databaseBuilder('gmapsDenny_database.db').build();
+  final dao = database.developerDAO;
   // await Firebase.initializeApp();
 
   // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
@@ -35,10 +42,12 @@ Future<void> main() async {
   //         AndroidFlutterLocalNotificationsPlugin>()
   //     ?.createNotificationChannel(channel);
 
-  runApp(MyApp());
+  runApp(MyApp(dao: dao));
 }
 
 class MyApp extends StatelessWidget {
+  final DeveloperDAO dao;
+  MyApp({required this.dao});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -47,7 +56,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: MapScreen(),
+      home: HomeScreen(dao: dao),
     );
   }
 }
